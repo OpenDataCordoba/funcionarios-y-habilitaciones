@@ -10,5 +10,13 @@ Esto en general no es un problema pero en casos específicos podría representar
 
 Este repositorio busca conectar la lista de funcionarios y la de los prestatarios para encontrar conexiones.  
 
+## Datos
 
+Los datos usados son:
+ - Web Service de funcionarios. [Link](https://gobiernoabierto.cordoba.gob.ar/api/funciones/)
+ - Lista de Taxis Habilitados. [Link](https://gobiernoabierto.cordoba.gob.ar/api/v2/transporte-publico/taxis/)
+ - Lista de Remises habilitados. [Link](https://gobiernoabierto.cordoba.gob.ar/api/v2/transporte-publico/remis/)
+ - Lista de Geriátricos habilitados. [Link](https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/)
+ - Lista de Jardines Maternales habilitados. [Link](https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/jardines/)
+ - Lista de transportistas escolares habilitados. [Link](https://gobiernoabierto.cordoba.gob.ar/api/v2/transporte-publico/escolar/)
 
