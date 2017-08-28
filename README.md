@@ -39,13 +39,8 @@ Remises encontrados: 2882
 Obteniendo Geriatricos ...
 Geriatricos encontrados: 106
 Obteniendo Jardines ...
-CUIT MALFORMADO: 27318170598
-CUIT MALFORMADO: 27-29473431
-CUIT MALFORMADO: 27188493667
-CUIT MALFORMADO: 20167431039
 Jardines encontrados: 283
 Obteniendo Transportes escolares ...
-CUIT MALFORMADO: 2729202387-7
 Transportes escolares encontrados: 508
 Buscar funcionarios con taxis ...
 Funcionarios con Taxis: 0
