@@ -103,6 +103,15 @@ for obj in remises.datos:
     uids[uid]['nombre'] = obj['_NAME']
     uids[uid]['total'] += 1
     uids[uid]['remises'] += 1
+
+for obj in taxis.datos:
+    uid = obj['_UID']
+    if uid not in uids.keys():
+        uids[uid] = {'uid': uid, 'total': 0, 'remises': 0, 'geriatricos': 0, 'jardines maternales': 0, 'taxis': 0, 'transportes escolares': 0}
+
+    uids[uid]['nombre'] = obj['_NAME']
+    uids[uid]['total'] += 1
+    uids[uid]['taxis'] += 1
     
 for obj in geriatricos.datos:
     uid = obj['_UID']
@@ -132,9 +141,9 @@ for obj in transportes_escolares.datos:
     uids[uid]['transportes escolares'] += 1
 
 ordenados = sorted(uids.values(), key=lambda k: k['total'], reverse=True) 
-
 top = 50
 
+print('Grabando mayores propietarios')
 with open('data/mayores-propietarios-no-funcionarios.csv', 'w') as csvfile:
     fieldnames = ['uid', 'nombre', 'total', 'remises', 'geriatricos', 'jardines maternales', 'taxis', 'transportes escolares']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -142,4 +151,70 @@ with open('data/mayores-propietarios-no-funcionarios.csv', 'w') as csvfile:
     writer.writeheader()
 
     for uid in ordenados[:top]:
+        writer.writerow(uid)
+
+
+print('Grabando mayores propietarios taxis')
+taxis_ordenados = sorted(uids.values(), key=lambda k: k['taxis'], reverse=True) 
+top = 10
+
+with open('data/mayores-propietarios-de-taxis-no-funcionarios.csv', 'w') as csvfile:
+    fieldnames = ['uid', 'nombre', 'total', 'remises', 'geriatricos', 'jardines maternales', 'taxis', 'transportes escolares']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+
+    for uid in taxis_ordenados[:top]:
+        writer.writerow(uid)
+
+print('Grabando mayores propietarios remises')
+remises_ordenados = sorted(uids.values(), key=lambda k: k['remises'], reverse=True) 
+top = 10
+
+with open('data/mayores-propietarios-de-remises-no-funcionarios.csv', 'w') as csvfile:
+    fieldnames = ['uid', 'nombre', 'total', 'remises', 'geriatricos', 'jardines maternales', 'taxis', 'transportes escolares']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+
+    for uid in remises_ordenados[:top]:
+        writer.writerow(uid)
+
+print('Grabando mayores propietarios jardines')
+jardines_ordenados = sorted(uids.values(), key=lambda k: k['jardines maternales'], reverse=True) 
+top = 10
+
+with open('data/mayores-propietarios-de-jardines-no-funcionarios.csv', 'w') as csvfile:
+    fieldnames = ['uid', 'nombre', 'total', 'remises', 'geriatricos', 'jardines maternales', 'taxis', 'transportes escolares']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+
+    for uid in jardines_ordenados[:top]:
+        writer.writerow(uid)
+
+print('Grabando mayores propietarios geriatricos')
+geriatricos_ordenados = sorted(uids.values(), key=lambda k: k['geriatricos'], reverse=True) 
+top = 10
+
+with open('data/mayores-propietarios-de-geriatricos-no-funcionarios.csv', 'w') as csvfile:
+    fieldnames = ['uid', 'nombre', 'total', 'remises', 'geriatricos', 'jardines maternales', 'taxis', 'transportes escolares']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+
+    for uid in geriatricos_ordenados[:top]:
+        writer.writerow(uid)
+
+
+transportes_ordenados = sorted(uids.values(), key=lambda k: k['transportes escolares'], reverse=True) 
+top = 10
+
+with open('data/mayores-propietarios-de-transportes-escolares-no-funcionarios.csv', 'w') as csvfile:
+    fieldnames = ['uid', 'nombre', 'total', 'remises', 'geriatricos', 'jardines maternales', 'taxis', 'transportes escolares']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+
+    for uid in transportes_ordenados[:top]:
         writer.writerow(uid)
