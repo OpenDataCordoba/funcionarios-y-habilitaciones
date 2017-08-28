@@ -1,4 +1,5 @@
 import sys
+import csv
 from source.get_data import *
 
 
@@ -86,3 +87,59 @@ print('Funcionarios con Remises: {}'.format(funcionarios_con_remises))
 print('Funcionarios con Geriatricos: {}'.format(funcionarios_con_geriatricos))
 print('Funcionarios con Jardines: {}'.format(funcionarios_con_jardines))
 print('Funcionarios con Transportes escolares: {}'.format(funcionarios_con_tranportes_escolares))
+
+
+# ---- ANALIZAR PROPIETARIOS (independientemente de que sean funcionarios)
+# Buscar a los permisionarios de todos los servicios y acumular resultados
+
+print('Analizando propietarios (no funcionarios)')
+uids = {}
+
+for obj in remises.datos:
+    uid = obj['_UID']
+    if uid not in uids.keys():
+        uids[uid] = {'uid': uid, 'total': 0, 'remises': 0, 'geriatricos': 0, 'jardines maternales': 0, 'taxis': 0, 'transportes escolares': 0}
+
+    uids[uid]['nombre'] = obj['_NAME']
+    uids[uid]['total'] += 1
+    uids[uid]['remises'] += 1
+    
+for obj in geriatricos.datos:
+    uid = obj['_UID']
+    if uid not in uids.keys():
+        uids[uid] = {'uid': uid, 'total': 0, 'remises': 0, 'geriatricos': 0, 'jardines maternales': 0, 'taxis': 0, 'transportes escolares': 0}
+
+    uids[uid]['nombre'] = obj['_NAME']
+    uids[uid]['total'] += 1
+    uids[uid]['geriatricos'] += 1
+
+for obj in jardines.datos:
+    uid = obj['_UID']
+    if uid not in uids.keys():
+        uids[uid] = {'uid': uid, 'total': 0, 'remises': 0, 'geriatricos': 0, 'jardines maternales': 0, 'taxis': 0, 'transportes escolares': 0}
+
+    uids[uid]['nombre'] = obj['_NAME']
+    uids[uid]['total'] += 1
+    uids[uid]['jardines maternales'] += 1
+
+for obj in transportes_escolares.datos:
+    uid = obj['_UID']
+    if uid not in uids.keys():
+        uids[uid] = {'uid': uid, 'total': 0, 'remises': 0, 'geriatricos': 0, 'jardines maternales': 0, 'taxis': 0, 'transportes escolares': 0}
+
+    uids[uid]['nombre'] = obj['_NAME']
+    uids[uid]['total'] += 1
+    uids[uid]['transportes escolares'] += 1
+
+ordenados = sorted(uids.values(), key=lambda k: k['total'], reverse=True) 
+
+top = 50
+
+with open('data/mayores-rpopietarios.csv', 'w') as csvfile:
+    fieldnames = ['uid', 'nombre', 'total', 'remises', 'geriatricos', 'jardines maternales', 'taxis', 'transportes escolares']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+
+    for uid in ordenados[:top]:
+        writer.writerow(uid)
