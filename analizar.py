@@ -135,7 +135,7 @@ ordenados = sorted(uids.values(), key=lambda k: k['total'], reverse=True)
 
 top = 50
 
-with open('data/mayores-rpopietarios.csv', 'w') as csvfile:
+with open('data/mayores-propietarios-no-funcionarios.csv', 'w') as csvfile:
     fieldnames = ['uid', 'nombre', 'total', 'remises', 'geriatricos', 'jardines maternales', 'taxis', 'transportes escolares']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
