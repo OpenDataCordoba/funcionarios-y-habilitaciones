@@ -23,6 +23,10 @@ Los datos usados son:
 ## Resultados
 
 Resultados de la primera versión del script.  
+```
+python3 analizar.py
+```
+
 No se encuentran Funcionarios con habilitaciones de los negocios listados.  
 
 ```
