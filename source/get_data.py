@@ -83,7 +83,7 @@ class CbaGeriatricos(ApiMuniCBAData):
         # ejemplo: "CUIT": "30-07115107-5",
         p = obj["CUIT"].split('-')
         if len(p) != 3:
-            print('CUIT MALFORMADDO: {}'.format(obj["CUIT"]))
+            print('CUIT MALFORMADO: {}'.format(obj["CUIT"]))
             res = obj["CUIT"]
         else:
             res = p[1]
@@ -101,7 +101,7 @@ class CbaJardines(ApiMuniCBAData):
         # ejemplo: "CUIT": "30-07115107-5",
         p = obj["CUIT"].split('-')
         if len(p) != 3:
-            print('CUIT MALFORMADDO: {}'.format(obj["CUIT"]))
+            print('CUIT MALFORMADO: {}'.format(obj["CUIT"]))
             res = obj["CUIT"]
         else:
             res = p[1]
@@ -119,7 +119,7 @@ class CbaTransportesEscolares(ApiMuniCBAData):
         # ejemplo: "CUIT": "30-07115107-5",
         p = obj["CUIT"].split('-')
         if len(p) != 3:
-            print('CUIT MALFORMADDO: {}'.format(obj["CUIT"]))
+            print('CUIT MALFORMADO: {}'.format(obj["CUIT"]))
             res = obj["CUIT"]
         else:
             res = p[1]
