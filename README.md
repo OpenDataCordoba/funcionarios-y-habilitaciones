@@ -20,3 +20,33 @@ Los datos usados son:
  - Lista de Jardines Maternales habilitados. [Link](https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/jardines/)
  - Lista de transportistas escolares habilitados. [Link](https://gobiernoabierto.cordoba.gob.ar/api/v2/transporte-publico/escolar/)
 
+## Resultados
+
+Resultados de la primera versión del script.  
+No se encuentran Funcionarios con habilitaciones de los negocios listados.  
+
+```
+Obteniendo funcionarios ...
+Funcionarios encontrados: 302
+Obteniendo taxis ...
+Taxis encontrados: 3927
+Obteniendo remises ...
+Remises encontrados: 2882
+Obteniendo Geriatricos ...
+Geriatricos encontrados: 106
+Obteniendo Jardines ...
+CUIT MALFORMADDO: 27318170598
+CUIT MALFORMADDO: 27-29473431
+CUIT MALFORMADDO: 27188493667
+CUIT MALFORMADDO: 20167431039
+Jardines encontrados: 283
+Obteniendo Transportes escolares ...
+CUIT MALFORMADDO: 2729202387-7
+Transportes escolares encontrados: 508
+Buscar funcionarios con taxis ...
+Funcionarios con Taxis: 0
+Funcionarios con Remises: 0
+Funcionarios con Geriatricos: 0
+Funcionarios con Jardines: 0
+Funcionarios con Transportes escolares: 0
+```
